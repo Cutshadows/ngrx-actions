@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "redux-app": {
+    "ingresoEgresoApp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/redux-app",
+            "outputPath": "dist/ingresoEgresoApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,7 +29,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/todomvc-app-css/index.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "redux-app:build"
+            "browserTarget": "ingresoEgresoApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "redux-app:build:production"
+              "browserTarget": "ingresoEgresoApp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "redux-app:build"
+            "browserTarget": "ingresoEgresoApp:build"
           }
         },
         "test": {
@@ -115,18 +115,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "redux-app:serve"
+            "devServerTarget": "ingresoEgresoApp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "redux-app:serve:production"
+              "devServerTarget": "ingresoEgresoApp:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "redux-app",
+  "defaultProject": "ingresoEgresoApp",
   "cli": {
     "analytics": false
   }
