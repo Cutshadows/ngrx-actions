@@ -1,6 +1,6 @@
 {
   "name": "ingreso-egreso-app",
-  "version": "0.0.3",
+  "version": "0.0.4-patch.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -59,7 +59,8 @@
   },
   "standard-version": {
     "scripts": {
-      "release": "standard-version -a"
+      "release": "standard-version -a",
+      "prerelease": "git add ."
     }
   }
 }
