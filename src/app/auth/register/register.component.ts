@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Usuario } from '../models/usuario.models';
+import { UsuarioDto } from '../models/usuario.models';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -32,16 +33,26 @@ export class RegisterComponent implements OnInit {
     console.log(this.registroForm)
     console.log(this.registroForm.valid)
     console.log(this.registroForm.value)
+    // Swal.fire({
+    //   title: 'Loading',
+    //   didOpen: ()=>{Swal.showLoading();}
+    // })
     const {nombre, correo, password}=this.registroForm.value;
-    this.authService.crearUsuarios(new Usuario(nombre, correo, password))
+
+    this.authService.crearUsuarios(new UsuarioDto(nombre, correo, password))
       .then(
         credenciales=>{
-          console.log(credenciales)
+        // Swal.close();
           this.route.navigate(['/dashboard'])
         }
-      ).catch(
-        error=>console.log(error)
-      )
+      ).catch(erro=>{
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: erro.message,
+          footer: '<a href> Why do i have this issue?</a>'
+        })
+      })
   }
 
 }

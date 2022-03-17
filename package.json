@@ -22,10 +22,11 @@
     "@angular/platform-browser-dynamic": "~10.2.4",
     "@angular/router": "~10.2.4",
     "bootstrap": "^4.6.1",
-    "firebase": "^7.24.0",
+    "firebase": "7.24.0",
     "firebase-tools": "^9.9.0",
     "rxfire": "^6.0.0",
     "rxjs": "~6.6.0",
+    "sweetalert2": "^11.4.4",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

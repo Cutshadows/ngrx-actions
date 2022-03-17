@@ -1,6 +1,6 @@
 
 
-export class Usuario{
+export class UsuarioDto{
     private readonly nombre:string;
     private readonly correo:string;
     private readonly password:string;
